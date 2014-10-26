@@ -55,7 +55,7 @@ describe('the daterange directive', function () {
 		$ngRootScope.ranges = {
 			'Today': [moment().startOf('day'), moment()],
 			// accepts string formatted dates
-			'Yesterday': [moment().subtract('days', 1).format('YYYY-MM-DD'), moment().subtract('days', 1).format('YYYY-MM-DD')]
+			'Yesterday': [moment().subtract(1, 'days').format('YYYY-MM-DD'), moment().subtract(1, 'days').format('YYYY-MM-DD')]
 		};
 		var element = $ngCompile('<input type="daterange" ng-model="dummy" ranges="ranges">')($ngRootScope);
 		expect(element.data('daterangepicker').ranges.Today).not.toBeUndefined();

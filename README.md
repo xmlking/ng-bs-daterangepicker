@@ -64,6 +64,17 @@ The result object `$scope.myDateRange` has a `startDate` and `endDate` propertie
 * `format`: mapped from `format` attribute;
 * `separator`: mapped from `separator` attribute.
 * `ranges`: mapped from `ranges` attribute. Can be a JSON string or scoped object. (check daterangepicker for formatting)
+* `opens`: mapped from `open` attribute. Can be `right` or `left`.
+* `timePicker`: mapped from `time-picker` attribute.
+* `timePickerIncrement`: mapped from `time-picker-increment` attribute.
+* `timePicker12Hour`: mapped from `time-picker-12-hour` attribute.
+* `singleDatePicker`: mapped from `single-date-picker` attribute.
+* `dateLimit`: mapped from `date-limit` attribute.
+* `showDropdowns`: mapped from `show-dropdowns` attribute.
+* `showWeekNumbers`: mapped from `show-week-numbers` attribute.
+* `buttonClasses`: mapped from `button-classes` attribute.
+* `applyClass`: mapped from `apply-class` attribute.
+* `cancelClass`: mapped from `cancel-class` attribute.
 
 Example with all above features:
 
@@ -76,7 +87,17 @@ Example with all above features:
 	limit="3 days"
 	format="L"
 	separator="/"
-	ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}">
+	ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}"
+	time-picker="true"
+	time-picker-increment="10"
+	time-picker-12-hour="false"
+	single-date-picker="true"
+	date-limit="true"
+	show-dropdowns="true"
+	show-week-numbers="true"
+	button-classes="new-class"
+	apply-class="new-class"
+	cancel-class="new-class">
 ```
 
 The `limit` attribute lets you specify a number and unit similarly as you would invoke `moment.duration()`.

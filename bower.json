@@ -4,8 +4,7 @@
   "main": "./src/ng-bs-daterangepicker.js",
   "dependencies": {
     "angular": ">= 1.0.7",
-    "bootstrap-daterangepicker": "*",
-    "bootstrap": "~3.0.0"
+    "bootstrap-daterangepicker": "*"
   },
   "devDependencies": {
     "angular-mocks": ">= 1.0.7"
