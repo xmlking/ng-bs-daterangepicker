@@ -1,7 +1,13 @@
 {
   "name": "ng-bs-daterangepicker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./src/ng-bs-daterangepicker.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
   "dependencies": {
     "angular": ">= 1.0.7",
     "bootstrap-daterangepicker": "*"
