@@ -16,8 +16,8 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			var options = {};
 			options.format = $attributes.format || 'YYYY-MM-DD';
 			options.separator = $attributes.separator || ' - ';
-			options.minDate = $attributes.mindate && moment($attributes.mindate);
-			options.maxDate = $attributes.maxdate && moment($attributes.maxdate);
+			options.minDate = $attributes.minDate && $parse($attributes.minDate)($scope);
+			options.maxDate = $attributes.maxDate && $parse($attributes.maxDate)($scope);
 			options.dateLimit = $attributes.limit && moment.duration.apply(this, $attributes.limit.split(' ').map(function (elem, index) { return index === 0 && parseInt(elem, 10) || elem; }) );
 			options.ranges = $attributes.ranges && $parse($attributes.ranges)($scope);
 			options.locale = $attributes.locale && $parse($attributes.locale)($scope);
@@ -71,7 +71,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 
 			$scope.$watch($attributes.ngModel, function (modelValue) {
 				if (!modelValue || (!modelValue.startDate)) {
-					ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().startOf('day') });
+					// ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().startOf('day') });
 					return;
 				}
 				$element.data('daterangepicker').setStartDate(modelValue.startDate);
