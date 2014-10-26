@@ -6,7 +6,9 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test"
+    "test",
+    "Gruntfile.js",
+    "package.json"
   ],
   "dependencies": {
     "angular": ">= 1.0.7",
