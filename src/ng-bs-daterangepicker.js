@@ -69,6 +69,16 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 				$element.val(formatted(ngModel.$viewValue));
 			};
 
+			$scope.$watch($attributes.singleDatePicker, function (modelValue) {
+				options.singleDatePicker = modelValue;
+				$element.daterangepicker(options, function(start, end) {
+					$scope.$apply(function () {
+						ngModel.$setViewValue({ startDate: start, endDate: end });
+						ngModel.$render();
+					});
+				});
+			});
+
 			$scope.$watch($attributes.ngModel, function (modelValue) {
 				if (!modelValue || (!modelValue.startDate)) {
 					// ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().startOf('day') });
